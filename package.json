@@ -1,0 +1,22 @@
+{
+  "name": "api-prokemon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melissalopes/Node-Api-Pokemon.git"
+  },
+  "author": "Melissa Lopes Gouveia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melissalopes/Node-Api-Pokemon/issues"
+  },
+  "homepage": "https://github.com/melissalopes/Node-Api-Pokemon#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
