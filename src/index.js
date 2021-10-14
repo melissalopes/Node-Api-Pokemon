@@ -1,6 +1,7 @@
 const express = require('express');
 const pokemonRoute = require('./routes/pokemon.routes')
 const townRoute = require('./routes/town.routes')
+const battleRoute = require('./routes/battle.routes')
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
 
 app.use(pokemonRoute)
 app.use(townRoute)
+app.use(battleRoute)
   
 const port = 3000;
 
