@@ -1,5 +1,6 @@
 const express = require('express');
 const pokemonRoute = require('./routes/pokemon.routes')
+const townRoute = require('./routes/town.routes')
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(pokemonRoute)
+app.use(townRoute)
   
 const port = 3000;
 

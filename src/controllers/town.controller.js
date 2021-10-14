@@ -1,4 +1,4 @@
-const GetTowns = (req, res) => {
+const getTowns = (req, res) => {
     try{
         res.status(200).json({ message: "Todas as cidades consultadas com sucesso!"})
     }catch(err){
@@ -31,7 +31,7 @@ const putTown = (req,res) => {
 }
 
 module.exports = {
-    GetTowns,
+    getTowns,
     getTownsById,
     postTown,
     putTown
