@@ -1,4 +1,5 @@
 const express = require('express');
+const pokemonRoute = require('./routes/pokemon.routes')
 
 const app = express();
 
@@ -9,6 +10,8 @@ app.get('/', (req, res) => {
       message: 'A api de Pokemon está funcionando!',
     });
 });
+
+app.use(pokemonRoute)
   
 const port = 3000;
 
