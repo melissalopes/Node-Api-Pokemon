@@ -1,38 +1,18 @@
-const getPokemons = (req, res) => {
-    try{
-        res.status(200).json({ message: "Todos os pokemons consultados com sucesso!"})
-    }catch(err){
-        res.status(404).json(err)
+
+const { pokemonsService } = require('../services');
+const service = new pokemonsService();
+
+class pokemonController {
+
+    static async getPokemons ( req, res ) {
+        try{
+            const allPokemons = await service.getAllRegisters();
+            return res.status(200).json({registros: allPokemons, message: "Registros encontrados com sucesso!"});
+        }catch(err){
+            return res.status(404).json(err.message);
+        }
     }
+
 }
 
-const getPokemonById = (req,res) => {
-    try{
-        res.status(200).json({ message: "Pokemon de id 1 encontrado com sucesso!"})
-    }catch(err){
-        res.status(404).json(err)
-    }
-}
-
-const postPokemon = (req,res) => {
-    try{
-        res.status(200).json({ message: "Novo Pokemon adicionado com sucesso!"})
-    }catch(err){
-        res.status(500).json(err)
-    }
-}
-
-const putPokemon = (req,res) => {
-    try{
-        res.status(200).json({ message: "Pokemon de id 1 atualizado com sucesso!"})
-    }catch(err){
-        res.status(500).json(err)
-    }
-}
-
-module.exports = {
-    getPokemons,
-    getPokemonById,
-    postPokemon,
-    putPokemon
-}
+module.exports = pokemonController
