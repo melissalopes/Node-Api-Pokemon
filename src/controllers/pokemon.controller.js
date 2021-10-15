@@ -56,6 +56,21 @@ class pokemonController {
         };
     };
 
+    static async deletePokemon (req, res){
+        const { id } = req.params;
+        try{
+            await service.deleteRegister(id);
+            return res.status(200).json({ 
+                mensagem: `Registro de id ${id} deletado com sucesso!`
+            });
+        }catch(err){     
+            return res.status(500).json({
+                message: `Não foi possível deleter o registro de id ${id}.`,
+                error: err.message,
+              });
+        };
+    };
+
 }
 
 module.exports = pokemonController
