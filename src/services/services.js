@@ -16,6 +16,11 @@ class Services {
                 id: Number(id)
             }
         });
+        
+        if(!registro){
+            throw new Error('Not Found!');
+        }
+
         return registro;
     }
 
