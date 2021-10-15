@@ -48,6 +48,15 @@ class Services {
     }
 
     async deleteRegister (registroId) {
+        
+        const registro = await database[this.nomeDoModelo].findOne({
+            where: { id: Number(registroId) } 
+        });
+        
+        if(!registro){
+            throw new Error('Not Found!');
+        }
+        
         await database[this.nomeDoModelo].destroy({ 
             where: { id : Number(registroId) } 
         });
