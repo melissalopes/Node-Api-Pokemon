@@ -29,6 +29,19 @@ class pokemonController {
         }
     }
 
+    static async postPokemon ( req, res ) {
+        const newPokemon = req.body
+        try{
+            const createPokemon = await service.createNewRegister(newPokemon);
+            return res.status(201).json({registro: createPokemon, message: "Registro adicionado com sucesso!"});
+        }catch(err){
+            return res.status(400).json({
+                message: `Não foi possível criar um novo registro.`,
+                error: err.message,
+              });
+        }
+    }
+
 }
 
 module.exports = pokemonController
