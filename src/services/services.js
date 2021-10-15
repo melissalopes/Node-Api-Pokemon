@@ -40,6 +40,10 @@ class Services {
             where: { id: Number(id) } 
         });
 
+        if(!registroAtualizado){
+            throw new Error('Not Found!');
+        }
+
         return registroAtualizado;
     }
 
