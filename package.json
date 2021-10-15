@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,13 @@
   "homepage": "https://github.com/melissalopes/Node-Api-Pokemon#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^2.3.1",
+    "path": "^0.12.7",
+    "sequelize": "^6.7.0",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }
