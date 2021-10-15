@@ -42,6 +42,20 @@ class pokemonController {
         }
     }
 
+    static async putPokemon (req, res){
+        const { id } = req.params;
+        const newData = req.body;
+        try{
+            const updatePokemon = await service.updateRegister(newData, id);
+            return res.status(200).json({registro: updatePokemon, message: "Registro atualizado com sucesso!"});
+        }catch(err){     
+            return res.status(400).json({
+                message: `Não foi possível atualizar o registro.`,
+                error: err.message,
+              });
+        };
+    };
+
 }
 
 module.exports = pokemonController
